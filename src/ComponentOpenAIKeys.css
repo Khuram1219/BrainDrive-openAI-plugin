@@ -1,0 +1,486 @@
+/* OpenAI API Keys Component Styles */
+
+.openai-keys-container {
+	padding: 1.5rem;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.openai-keys-container.light {
+	background: #ffffff;
+	border: 1px solid #e1e5e9;
+	color: #2c3e50;
+}
+
+.openai-keys-container.dark {
+	background: #1a1a1a;
+	border: 1px solid #333;
+	color: #e1e5e9;
+}
+
+.openai-keys-header {
+	margin-bottom: 2rem;
+}
+
+.openai-keys-title {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-bottom: 0.5rem;
+}
+
+.openai-keys-title h3 {
+	margin: 0;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.openai-keys-icon {
+	width: 24px;
+	height: 24px;
+	color: #007bff;
+}
+
+.openai-keys-description {
+	margin: 0;
+	color: #6c757d;
+	font-size: 0.95rem;
+	line-height: 1.5;
+}
+
+.openai-keys-container.dark .openai-keys-description {
+	color: #adb5bd;
+}
+
+.openai-keys-content {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.api-key-section {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.api-key-label {
+	font-weight: 600;
+	font-size: 0.95rem;
+	color: #495057;
+}
+
+.openai-keys-container.dark .api-key-label {
+	color: #dee2e6;
+}
+
+.api-key-input-container {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.api-key-display {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 0.75rem 1rem;
+	border: 2px solid #e1e5e9;
+	border-radius: 6px;
+	background: #f8f9fa;
+	color: #6c757d;
+	font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+	font-size: 0.95rem;
+}
+
+.openai-keys-container.dark .api-key-display {
+	background: #2d2d2d;
+	border-color: #444;
+	color: #adb5bd;
+}
+
+.masked-key {
+	flex: 1;
+	letter-spacing: 0.5px;
+	font-weight: 500;
+}
+
+.key-status {
+	margin-left: 1rem;
+	font-size: 0.85rem;
+	font-weight: 500;
+}
+
+.key-status:contains("✅") {
+	color: #28a745;
+}
+
+.key-status:contains("⚠️") {
+	color: #ffc107;
+}
+
+.api-key-input {
+	flex: 1;
+	padding: 0.75rem 1rem;
+	border: 2px solid #e1e5e9;
+	border-radius: 6px;
+	font-size: 0.95rem;
+	font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+	transition: all 0.2s ease;
+	background: #ffffff;
+	color: #2c3e50;
+}
+
+.openai-keys-container.dark .api-key-input {
+	background: #2d2d2d;
+	border-color: #444;
+	color: #e1e5e9;
+}
+
+.api-key-input:focus {
+	outline: none;
+	border-color: #007bff;
+	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.openai-keys-container.dark .api-key-input:focus {
+	border-color: #4dabf7;
+	box-shadow: 0 0 0 3px rgba(77, 171, 247, 0.1);
+}
+
+.api-key-input:disabled {
+	background: #f8f9fa;
+	color: #6c757d;
+	cursor: not-allowed;
+}
+
+.openai-keys-container.dark .api-key-input:disabled {
+	background: #343a40;
+	color: #adb5bd;
+}
+
+.visibility-toggle {
+	position: absolute;
+	right: 0.75rem;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0.25rem;
+	border-radius: 4px;
+	transition: background-color 0.2s ease;
+	font-size: 1.1rem;
+}
+
+.visibility-toggle:hover {
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.openai-keys-container.dark .visibility-toggle:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.visibility-toggle:disabled {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+.api-key-help {
+	margin: 0;
+	font-size: 0.85rem;
+	color: #6c757d;
+	line-height: 1.4;
+}
+
+.openai-keys-container.dark .api-key-help {
+	color: #adb5bd;
+}
+
+.api-key-link {
+	color: #007bff;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.openai-keys-container.dark .api-key-link {
+	color: #4dabf7;
+}
+
+.api-key-link:hover {
+	text-decoration: underline;
+}
+
+.error-message {
+	padding: 0.75rem 1rem;
+	background: #f8d7da;
+	border: 1px solid #f5c6cb;
+	border-radius: 6px;
+	color: #721c24;
+	font-size: 0.9rem;
+	line-height: 1.4;
+}
+
+.openai-keys-container.dark .error-message {
+	background: #2d1b1b;
+	border-color: #4a2c2c;
+	color: #f8d7da;
+}
+
+.success-message {
+	padding: 0.75rem 1rem;
+	background: #d4edda;
+	border: 1px solid #c3e6cb;
+	border-radius: 6px;
+	color: #155724;
+	font-size: 0.9rem;
+	line-height: 1.4;
+}
+
+.openai-keys-container.dark .success-message {
+	background: #1b2d1b;
+	border-color: #2c4a2c;
+	color: #d4edda;
+}
+
+.openai-keys-actions {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.save-button {
+	padding: 0.75rem 1.5rem;
+	background: #007bff;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	font-size: 0.95rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	min-width: 120px;
+}
+
+.save-button:hover:not(:disabled) {
+	background: #0056b3;
+	transform: translateY(-1px);
+}
+
+.save-button:active:not(:disabled) {
+	transform: translateY(0);
+}
+
+.save-button:disabled {
+	background: #6c757d;
+	cursor: not-allowed;
+	transform: none;
+}
+
+.openai-keys-container.dark .save-button {
+	background: #4dabf7;
+}
+
+.openai-keys-container.dark .save-button:hover:not(:disabled) {
+	background: #3b8fd9;
+}
+
+.remove-button {
+	padding: 0.75rem 1.5rem;
+	background: #dc3545;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	font-size: 0.95rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	min-width: 120px;
+}
+
+.remove-button:hover:not(:disabled) {
+	background: #c82333;
+	transform: translateY(-1px);
+}
+
+.remove-button:active:not(:disabled) {
+	transform: translateY(0);
+}
+
+.remove-button:disabled {
+	background: #6c757d;
+	cursor: not-allowed;
+	transform: none;
+}
+
+.openai-keys-container.dark .remove-button {
+	background: #e74c3c;
+}
+
+.openai-keys-container.dark .remove-button:hover:not(:disabled) {
+	background: #c0392b;
+}
+
+.remove-confirmation {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+}
+
+.confirmation-content {
+	background: #ffffff;
+	border-radius: 8px;
+	padding: 2rem;
+	max-width: 400px;
+	width: 90%;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.openai-keys-container.dark .confirmation-content {
+	background: #2d2d2d;
+	color: #e1e5e9;
+}
+
+.confirmation-content h4 {
+	margin: 0 0 1rem 0;
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: #dc3545;
+}
+
+.confirmation-content p {
+	margin: 0 0 1.5rem 0;
+	color: #6c757d;
+	line-height: 1.5;
+}
+
+.openai-keys-container.dark .confirmation-content p {
+	color: #adb5bd;
+}
+
+.confirmation-actions {
+	display: flex;
+	gap: 1rem;
+	justify-content: flex-end;
+}
+
+.confirm-button {
+	padding: 0.75rem 1.5rem;
+	background: #dc3545;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	font-size: 0.95rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.confirm-button:hover:not(:disabled) {
+	background: #c82333;
+}
+
+.confirm-button:disabled {
+	background: #6c757d;
+	cursor: not-allowed;
+}
+
+.cancel-button {
+	padding: 0.75rem 1.5rem;
+	background: #6c757d;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	font-size: 0.95rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.cancel-button:hover:not(:disabled) {
+	background: #5a6268;
+}
+
+.cancel-button:disabled {
+	background: #6c757d;
+	cursor: not-allowed;
+}
+
+.openai-keys-info {
+	margin-top: 1rem;
+	padding: 1rem;
+	background: #f8f9fa;
+	border-radius: 6px;
+	border-left: 4px solid #007bff;
+}
+
+.openai-keys-container.dark .openai-keys-info {
+	background: #2d2d2d;
+	border-left-color: #4dabf7;
+}
+
+.openai-keys-info h4 {
+	margin: 0 0 0.75rem 0;
+	font-size: 1rem;
+	font-weight: 600;
+	color: #495057;
+}
+
+.openai-keys-container.dark .openai-keys-info h4 {
+	color: #dee2e6;
+}
+
+.openai-keys-info ul {
+	margin: 0;
+	padding-left: 1.25rem;
+	list-style-type: disc;
+}
+
+.openai-keys-container.dark .openai-keys-info ul {
+	color: #adb5bd;
+}
+
+.openai-keys-info li {
+	margin-bottom: 0.5rem;
+	line-height: 1.4;
+}
+
+.openai-keys-info li:last-child {
+	margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+	.openai-keys-container {
+		padding: 1rem;
+	}
+
+	.openai-keys-title h3 {
+		font-size: 1.25rem;
+	}
+
+	.openai-keys-actions {
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.save-button,
+	.remove-button {
+		width: 100%;
+		min-width: auto;
+	}
+
+	.confirmation-actions {
+		flex-direction: column;
+	}
+
+	.confirm-button,
+	.cancel-button {
+		width: 100%;
+	}
+}
